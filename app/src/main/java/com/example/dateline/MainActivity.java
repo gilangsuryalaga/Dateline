@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         BottomNavigationView navView = findViewById(R.id.nav_view);
         mTextMessage = findViewById(R.id.message);
 //
-//        loadFragment(new HomeFragment());
+        loadFragment(new HomeFragment());
 
         navView.setOnNavigationItemSelectedListener(this);
     }
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
+
         switch (item.getItemId()) {
             case R.id.navigation_home:
                 fragment = new HomeFragment();
@@ -41,16 +42,17 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 fragment = new CartFragment();
                 break;
         }
+        return loadFragment(fragment);
+    }
+    private boolean loadFragment(Fragment fragment) {
+        if (fragment != null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .commit();
+            return true;
+        }
         return false;
     }
-//    private boolean loadFragment(Fragment fragment){
-//        if (fragment != null) {
-//            getSupportFragmentManager()
-//                    .beginTransaction()
-//                    .replace(R.id.fragment_container, fragment)
-//                    .commit();
-//            return true;
-//        }
-//        return false;
-//    }
+
 }
