@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="WoodVeener">#756867</color>
+    <color name="SandDollar">#d5d6d2</color>
+    <color name="Charcoal">#353c3f</color>
+    <color name="Orange">#ff8d3f</color>
+</resources>
