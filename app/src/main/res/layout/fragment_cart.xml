@@ -22,15 +22,16 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#9AFF8D3F">
+                    android:background="@color/Orange">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Produk yang ditambahkan"
-                        android:textColor="@color/Charcoal"
                         android:layout_gravity="center"
                         android:layout_margin="10dp"
-                        android:textSize="25dp"
+                        android:textColor="#fff"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
