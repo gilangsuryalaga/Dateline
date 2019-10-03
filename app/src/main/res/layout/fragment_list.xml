@@ -22,7 +22,9 @@
             android:iconifiedByDefault="false"
             android:queryHint="Search here"
             android:layout_weight="2"
-            android:id="@+id/searchview"></SearchView>
+            android:id="@+id/searchview">
+
+        </SearchView>
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,11 +35,10 @@
     </LinearLayout>
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 <GridLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="10dp"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
     android:layout_gravity="center"
     android:columnCount="2">
     <LinearLayout
