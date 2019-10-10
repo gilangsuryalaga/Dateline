@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="14dp"
+        android:elevation="6dp"
+        app:cardCornerRadius="6dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/SandDollar">
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/mainTitle"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:paddingTop="125dp"-->
+<!--                android:text="Trending #1"-->
+<!--                android:textColor="#fff"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@id/mainTitle"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:text="Felix and Marzia's Wedding"-->
+<!--                android:textColor="#fff"-->
+<!--                android:textSize="15dp"-->
+<!--                android:textStyle="bold|italic" />-->
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

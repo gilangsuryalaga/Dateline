@@ -9,21 +9,23 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.MenuItem;
+
 import android.widget.TextView;
+
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private TextView mTextMessage;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         BottomNavigationView navView = findViewById(R.id.nav_view);
         mTextMessage = findViewById(R.id.message);
-//
-        loadFragment(new HomeFragment());
 
+        loadFragment(new HomeFragment());
         navView.setOnNavigationItemSelectedListener(this);
     }
 
@@ -54,5 +56,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
         return false;
     }
+
 
 }
