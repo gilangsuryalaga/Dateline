@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,7 +32,7 @@ public class ListFragment extends Fragment {
 
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view_list);
         RecyclerViewAdapterList recyclerViewAdapter = new RecyclerViewAdapterList(getContext(),listContent);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
         mRecyclerView.setAdapter(recyclerViewAdapter);
         return rootView;
     }

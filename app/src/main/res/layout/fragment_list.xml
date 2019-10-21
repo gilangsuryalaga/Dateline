@@ -36,19 +36,19 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-<GridLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:columnCount="2">
+<!--<GridLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:columnCount="2">-->
     <androidx.recyclerview.widget.RecyclerView
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/recycler_view_list"
         >
 
     </androidx.recyclerview.widget.RecyclerView>
-</GridLayout>
+<!--</GridLayout>-->
 
         </ScrollView>
     </LinearLayout>

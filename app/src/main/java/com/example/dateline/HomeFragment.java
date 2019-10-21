@@ -42,11 +42,11 @@ public class HomeFragment extends Fragment {
         //Recycler View
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recycler);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),listContent);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false));
         mRecyclerView.setAdapter(recyclerViewAdapter);
 
         mRecyclerView2 = (RecyclerView) rootView.findViewById(R.id.recycler2);
-        mRecyclerView2.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mRecyclerView2.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false));
         mRecyclerView2.setAdapter(recyclerViewAdapter);
         setSliderViews();
         return rootView;
@@ -57,16 +57,16 @@ public class HomeFragment extends Fragment {
             SliderView sliderView =new SliderView(getContext());
             switch (i){
                 case 0:
-                    sliderView.setImageDrawable(R.drawable.weddingpewds);
+                    sliderView.setImageDrawable(R.drawable.slide1);
                     break;
                 case 1:
-                    sliderView.setImageDrawable(R.drawable.pic2);
+                    sliderView.setImageDrawable(R.drawable.slide2);
                     break;
                 case 2:
-                    sliderView.setImageDrawable(R.drawable.pic3);
+                    sliderView.setImageDrawable(R.drawable.slide3);
                     break;
                 case 3:
-                    sliderView.setImageDrawable(R.drawable.pic4);
+                    sliderView.setImageDrawable(R.drawable.slide4);
                     break;
             }
             sliderView.setImageScaleType(ImageView.ScaleType.CENTER_CROP);
