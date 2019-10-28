@@ -57,16 +57,16 @@ public class HomeFragment extends Fragment {
             SliderView sliderView =new SliderView(getContext());
             switch (i){
                 case 0:
-                    sliderView.setImageDrawable(R.drawable.slide1);
+                    sliderView.setImageDrawable(R.drawable.wedding1);
                     break;
                 case 1:
-                    sliderView.setImageDrawable(R.drawable.slide2);
+                    sliderView.setImageDrawable(R.drawable.wedding2);
                     break;
                 case 2:
-                    sliderView.setImageDrawable(R.drawable.slide3);
+                    sliderView.setImageDrawable(R.drawable.wedding3);
                     break;
                 case 3:
-                    sliderView.setImageDrawable(R.drawable.slide4);
+                    sliderView.setImageDrawable(R.drawable.wedding4);
                     break;
             }
             sliderView.setImageScaleType(ImageView.ScaleType.CENTER_CROP);
