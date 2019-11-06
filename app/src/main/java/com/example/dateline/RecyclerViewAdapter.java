@@ -1,11 +1,16 @@
 package com.example.dateline;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,6 +20,7 @@ import java.util.List;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
     Context mContext;
     List<Content> mList;
+    Dialog mDialog;
 
     public RecyclerViewAdapter(Context mContext, List<Content> mList) {
         this.mContext = mContext;
@@ -22,6 +28,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
+
+        private LinearLayout item_content;
         private TextView tvJudul;
         private TextView tvHarga;
         private ImageView ivAlbum;
@@ -30,6 +38,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            item_content = (LinearLayout)itemView.findViewById(R.id.content_item_id2);
             ivAlbum = (ImageView) itemView.findViewById(R.id.iv_album);
             tvHarga = (TextView) itemView.findViewById(R.id.tv_harga);
             tvJudul = (TextView) itemView.findViewById(R.id.tv_judul);
@@ -42,7 +51,27 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         View v;
         v = LayoutInflater.from(mContext).inflate(R.layout.recycler_view_home,parent,false);
-        MyViewHolder vHolder = new MyViewHolder(v);
+        final MyViewHolder vHolder = new MyViewHolder(v);
+
+        mDialog = new Dialog( mContext );
+        mDialog.setContentView(R.layout.dialog_content);
+        mDialog.getWindow().setBackgroundDrawable( new ColorDrawable( Color.TRANSPARENT ) );
+
+
+        vHolder.item_content.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextView dialog_judul = (TextView) mDialog.findViewById( R.id.tv_dialog_judul );
+                TextView dialog_harga = (TextView) mDialog.findViewById( R.id.tv_dialog_harga );
+                ImageView iv_dialog= (ImageView)mDialog.findViewById( R.id.iv_dialog );
+                iv_dialog.setImageResource(mList.get(vHolder.getAdapterPosition()).getPhoto());
+                dialog_harga.setText( mList.get( vHolder.getAdapterPosition()).getHarga());
+                dialog_judul.setText( mList.get( vHolder.getAdapterPosition()).getJudul());
+
+                Toast.makeText( mContext,"Test Click" + String.valueOf( vHolder.getAdapterPosition()),Toast.LENGTH_SHORT).show();
+                mDialog.show();
+            }
+        } );
         return vHolder;
 
     }

@@ -50,6 +50,7 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
         View v;
         v = LayoutInflater.from(mContext).inflate(R.layout.recycler_view_list,parent,false);
         final MyViewHolder vHolder = new MyViewHolder(v);
+
         mDialog = new Dialog( mContext );
         mDialog.setContentView(R.layout.dialog_content);
         mDialog.getWindow().setBackgroundDrawable( new ColorDrawable( Color.TRANSPARENT ) );
@@ -73,17 +74,15 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapterList.MyViewHolder holder, int position) {
+
         holder.tvJudul.setText(mList.get(position).getJudul());
         holder.tvHarga.setText(mList.get(position).getHarga());
         holder.ivAlbum.setImageResource(mList.get(position).getPhoto());
+
     }
 
     @Override
     public int getItemCount() {
         return mList.size();
     }
-
-
-
-
 }
